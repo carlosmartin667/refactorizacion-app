@@ -8,7 +8,7 @@ import { AddReviewRestaurantCss } from "../../helpers/estilos/AddReviewRestauran
 import { AddReviewRestaurantHelper } from "../../helpers/Restaurants/AddReviewRestaurantHelper";
 
 export default function AddReviewRestaurant({ navigation, route }) {
-  const style = AddReviewRestaurantCss();
+  const styles = AddReviewRestaurantCss();
 
   const { addRevew, isLoading, setRating, setTitle, setReview } =
     AddReviewRestaurantHelper(navigation, route);
