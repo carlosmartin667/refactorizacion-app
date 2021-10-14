@@ -1,18 +1,13 @@
-import React, { useState, useEffect, useRef } from "react";
-import { View } from "react-native";
+import React, { useState, useEffect } from "react";
 
-import ListTopRestaurants from "../components/Ranking/ListTopRestaurants";
-
-import { firebaseApp } from "../utils/firebase";
+import { firebaseApp } from "../../utils/firebase";
 import firebase from "firebase/app";
 import "firebase/firestore";
 
 const db = firebase.firestore(firebaseApp);
 
-export default function TopRestaurants(props) {
-  const { navigation } = props;
+export const TopRestauransHelper = () => {
   const [restaurants, setRestaurants] = useState([]);
-
 
   useEffect(() => {
     db.collection("restaurants")
@@ -30,10 +25,5 @@ export default function TopRestaurants(props) {
       });
   }, []);
 
-  return (
-    <View>
-      <ListTopRestaurants restaurants={restaurants} navigation={navigation} />
-    
-    </View>
-  );
-}
+  return restaurants;
+};
