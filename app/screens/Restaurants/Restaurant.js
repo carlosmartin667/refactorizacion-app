@@ -3,7 +3,6 @@ import { StyleSheet, Text, View, ScrollView, Dimensions } from "react-native";
 import { Rating, ListItem, Icon } from "react-native-elements";
 import { map } from "lodash";
 import { useFocusEffect } from "@react-navigation/native";
-//import Toast from "react-native-easy-toast";
 import Loading from "../../components/Account/Loading";
 //import Carousel from "../../components/Carousel";
 // import Map from "../../components/Map";
@@ -23,7 +22,6 @@ export default function Restaurant(props) {
   const [rating, setRating] = useState(0);
   const [isFavorite, setIsFavorite] = useState(false);
   const [userLogged, setUserLogged] = useState(false);
-//   const toastRef = useRef();
 
   navigation.setOptions({ title: name });
 
@@ -133,7 +131,6 @@ export default function Restaurant(props) {
         address={restaurant.address}
       />
       <ListReviews navigation={navigation} idRestaurant={restaurant.id} />
-      {/* <Toast ref={toastRef} position="center" opacity={0.9} /> */}
     </ScrollView>
   );
 }
